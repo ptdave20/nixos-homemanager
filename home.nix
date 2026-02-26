@@ -56,29 +56,9 @@
     protonmail-bridge
     proton-authenticator
     boatswain
+    streamcontroller
     ani-cli
   ];
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch";
-      ngc = "sudo nix-collect-garbage -d";
-    };
-  };
-
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [
-      "git"
-      "go"
-      "docker"
-      "vscode"
-      "node"
-      "sudo"
-    ];
-    theme = "cloud";
-  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
