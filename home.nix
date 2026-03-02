@@ -5,7 +5,9 @@
     ./zsh.nix
     ./firefox.nix
     ./obs.nix
+    ./vscode.nix
   ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ptdave";
@@ -43,6 +45,8 @@
   # environment.
   home.packages = with pkgs; [
     go
+    umu-launcher
+    python3
     oh-my-zsh
     kdePackages.kate
     kdePackages.kcalc
@@ -59,6 +63,18 @@
     streamcontroller
     ani-cli
   ];
+
+  # Discord
+  programs.vesktop = {
+    enable = true;
+
+    #ref: https://mynixos.com/home-manager/option/programs.vesktop.settings
+    settings = {
+      minimizeToTray = true;
+      tray = true;
+      hardwareAcceleration = true;
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
